@@ -4,7 +4,9 @@
   "scripts": {
     "run": "babel --plugins transform-runtime,transform-async-to-generator src -d build && node build/index.js"
   },
-  "dependencies": {},
+  "dependencies": {
+    "request": "2.72.0"
+  },
   "devDependencies": {
     "babel-cli": "6.9.0",
     "babel-plugin-transform-async-to-generator": "6.8.0",

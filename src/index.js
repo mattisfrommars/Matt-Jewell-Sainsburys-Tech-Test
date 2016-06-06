@@ -1,5 +1,7 @@
 import fs from "fs";
 import path from "path";
+
+// import the application runtime
 import runtime from "./runtime";
 
 // don't bother with try/catch here. Just let any errors propagate up to console
