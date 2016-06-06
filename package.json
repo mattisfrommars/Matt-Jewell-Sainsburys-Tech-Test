@@ -2,9 +2,15 @@
   "name": "matt-jewell-sainsburys-tech-test",
   "version": "0.0.0",
   "scripts": {
-    "cli": "node ./bin/cli"
+    "run": "babel --plugins transform-runtime,transform-async-to-generator src -d build && node build/test.js"
   },
   "dependencies": {},
   "devDependencies": {
+    "babel-cli": "6.9.0",
+    "babel-plugin-transform-async-to-generator": "6.8.0",
+    "babel-plugin-transform-runtime": "6.9.0",
+    "babel-preset-es2015": "6.9.0",
+    "babel-register": "6.9.0",
+    "mocha": "2.5.3"
   }
 }
