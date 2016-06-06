@@ -1,0 +1,10 @@
+{
+  "name": "matt-jewell-sainsburys-tech-test",
+  "version": "0.0.0",
+  "scripts": {
+    "cli": "node ./bin/cli"
+  },
+  "dependencies": {},
+  "devDependencies": {
+  }
+}
