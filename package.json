@@ -5,6 +5,7 @@
     "run": "babel --plugins transform-runtime,transform-async-to-generator src -d build && node build/index.js"
   },
   "dependencies": {
+    "cheerio": "0.20.0",
     "request": "2.72.0"
   },
   "devDependencies": {
