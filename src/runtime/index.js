@@ -1,10 +1,7 @@
-import createHttpDataStructure from "../structures/createHttpDataStructure";
+import httpPageGetter from "../httpPageGetter";
 
 export default async function (config) {
-    const httpData = createHttpDataStructure({
-        body: "Hello, world"
-    });
-    
-    console.log("getting data", httpData.body);
-    console.log(Object.keys(httpData));
+    const httpData = await httpPageGetter("http://www.google.com");
+    console.log("Got the body!");
+    console.log(httpData.body);
 };
