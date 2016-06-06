@@ -1,8 +1,8 @@
 import cheerio from "cheerio";
 
 export default class DomParser {
-    constructor (httpData) {
-        this.$ = cheerio.load(httpData.body);
+    constructor (html) {
+        this.$ = cheerio.load(html);
     }
 
     /**
@@ -23,7 +23,7 @@ export default class DomParser {
      */
     getNodesText (selectors) {
         return mapSelectors(this.$, selectors, function ($this) {
-            return $this.text().trim();
+            return safeTrim($this.text());
         });
     }
 
@@ -40,7 +40,7 @@ export default class DomParser {
      */
     getNodesAttr (attrName, selectors) {
         return mapSelectors(this.$, selectors, function ($this) {
-            return $this.attr(attrName).trim();
+            return safeTrim($this.attr(attrName));
         });
     }
 }
@@ -53,4 +53,8 @@ function mapSelectors ($, selectors, fn) {
         });
         return results;
     });
+}
+
+function safeTrim (string) {
+    return (string || "").trim();
 }

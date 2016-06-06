@@ -2,7 +2,8 @@
   "name": "matt-jewell-sainsburys-tech-test",
   "version": "0.0.0",
   "scripts": {
-    "run": "babel --plugins transform-runtime,transform-async-to-generator src -d build && node build/index.js"
+    "run": "rm -rf build/* && babel --plugins transform-runtime,transform-async-to-generator src -d build && node build/index.js",
+    "test": "mocha --compilers js:babel-register"
   },
   "dependencies": {
     "cheerio": "0.20.0",
