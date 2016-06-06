@@ -1,6 +1,6 @@
 import createHttpDataStructure from "../structures/createHttpDataStructure";
 
-module.exports = async function (config) {
+export default async function (config) {
     const httpData = createHttpDataStructure({
         body: "Hello, world"
     });

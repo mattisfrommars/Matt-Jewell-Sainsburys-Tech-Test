@@ -18,7 +18,7 @@
  *  fooBarInstance.foo === "Foo!";
  *  fooBarInstance.foo = "a new value"; // Wont change anything, structs are immutable thanks to Object.freeze
  */
-module.exports = function defineStructure (structDefinition) {
+export default function defineStructure (structDefinition) {
     return function (structData) {
         const structuredData = structDefinition.reduce(function (dataObject, propertyName) {
             dataObject[propertyName] = structData[propertyName];

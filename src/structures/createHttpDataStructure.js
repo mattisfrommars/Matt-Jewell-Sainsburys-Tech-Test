@@ -3,4 +3,5 @@ import defineStructure from "./defineStructure";
 const props = [
     "body"
 ];
-module.exports = defineStructure(props);
+
+export default defineStructure(props);
