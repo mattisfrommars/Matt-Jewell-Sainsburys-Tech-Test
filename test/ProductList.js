@@ -27,4 +27,9 @@ describe("A Product List", function () {
         assert.equal(titles[0], "My First Product");
         assert.equal(titles[1], "My Second Product");
     });
+    it("calculates the total price of the products in the list", function () {
+        var expected = 12.5;
+        var actual = productList.totalPrice;
+        assert.equal(actual, expected);
+    });
 });
