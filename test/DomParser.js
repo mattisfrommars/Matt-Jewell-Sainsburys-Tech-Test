@@ -1,6 +1,6 @@
 import {describe, it, beforeEach} from "mocha";
 import assert from "assert";
-import DomParser from "../src/DomParser";
+import DOMParser from "../src/DOMParser";
 import {STUB_HTML} from "./data/stubs";
 
 // Just some happy path testing, I'm sure there's a million edge cases, but let's hope that cheerio handles them
@@ -8,7 +8,7 @@ describe("A Dom Parser", function () {
     describe("Given an instance of a dom parser", function () {
         var domParser;
         beforeEach(function () {
-            domParser = new DomParser(STUB_HTML);
+            domParser = new DOMParser(STUB_HTML);
         });
 
         describe("getting text content", function () {

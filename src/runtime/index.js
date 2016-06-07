@@ -1,11 +1,11 @@
 import {getPageContents} from "../Http";
+import {createFromHttpData as createDomFromHttp} from "../DOMParser";
 import {createFromDom as createProductListFromDom} from "../ProductList";
-import DomParser from "../DomParser";
 
 export default async function (config) {
     try {
         const httpData = await getPageContents(config.scrapeUrl);
-        const httpDom = new DomParser(httpData.body);
+        const httpDom = createDomFromHttp(httpData);
         const productList = createProductListFromDom(httpDom);
         console.log("productList", productList);
         console.log("total price", totalPrice);

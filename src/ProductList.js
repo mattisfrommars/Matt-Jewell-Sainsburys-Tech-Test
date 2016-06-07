@@ -2,7 +2,35 @@ import {createProduct} from "./structures";
 
 export default class ProductList {
     constructor (products) {
-        this.products = products
+        this.products = products;
+    }
+
+    // defer iterable to products
+    get length () {
+        return this.products.length;
+    }
+
+    [Symbol.iterator]() {
+        let index = 0;
+        return {
+            next: () => {
+                const value = this.products[index];
+                const done = index >= this.products.length;
+                index++;
+                return { value, done };
+            }
+        };
+    }
+
+    // compute total price
+    get totalPrice () {
+        return this.products.reduce(function (total, currentProduct) {
+            // floating point Math in JS is a joke
+            const currentTotal = parseInt(total * 100, 10);
+            const currentPriceInt = parseInt(currentProduct.unitPrice * 100, 10);
+            const newTotalInt = currentTotal + currentPriceInt;
+            return newTotalInt / 100;
+        }, 0);
     }
 }
 

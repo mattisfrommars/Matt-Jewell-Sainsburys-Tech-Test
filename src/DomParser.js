@@ -1,6 +1,6 @@
 import cheerio from "cheerio";
 
-export default class DomParser {
+export default class DOMParser {
     constructor (html) {
         this.$ = cheerio.load(html);
     }
@@ -45,6 +45,12 @@ export default class DomParser {
     }
 }
 
+// expose a factory method to create from httpData
+export const createFromHttpData = function (httpData) {
+    return new DOMParser(httpData.body);
+};
+
+// private methods
 function mapSelectors ($, selectors, fn) {
     return selectors.map(function (selector) {
         let results = [];
