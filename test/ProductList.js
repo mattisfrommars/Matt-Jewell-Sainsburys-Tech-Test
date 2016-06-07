@@ -38,7 +38,6 @@ describe("A Product List", function () {
     describe("JSON format (integration test)", function () {
         it("outputs JSON in the expected format", function () {
             const productDetail = new ProductDetail(STUB_PRODUCT);
-            console.log("typeof productDetail.toJSON", typeof productDetail.toJSON);
             const productList = new ProductList([productDetail]);
             const actual = productList.toJSON();
             const expected = STUB_PRODUCT_EXPECTED_JSON;
