@@ -10,7 +10,8 @@
 
 // all the data structures used in the app:
 const httpData = [
-    "body"
+    "body",
+    "contentSize"
 ];
 const product = [
     "title",
