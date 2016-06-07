@@ -3,6 +3,15 @@ export default class ProductDetail {
     constructor (properties) {
         Object.assign(this, properties);
     }
+    
+    toJSON () {
+        return {
+            title: this.title,
+            size: this.contentSize.toFixed(2) + "KB",
+            unit_price: this.unitPrice,
+            description: this.description
+        };
+    }
 }
 
 // expose a factory method for fetching the description and binding it to an existing set of properties

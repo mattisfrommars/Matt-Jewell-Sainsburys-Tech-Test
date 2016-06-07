@@ -9,10 +9,18 @@ export const getPageContents = function (pageUrl) {
                 reject(error);
                 return;
             }
+
             const httpData = createHttpData({
-                body: body
+                body: body,
+                contentSize: calculateContentSize(response)
             });
             resolve(httpData);
         });
     });
 };
+
+// returns content size in KB from http response
+function calculateContentSize (response) {
+    const sizeBytes = response.headers['content-length'];
+    return sizeBytes / 1000;
+}

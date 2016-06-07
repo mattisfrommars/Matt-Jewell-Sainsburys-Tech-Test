@@ -32,6 +32,13 @@ export default class ProductList {
             return newTotalInt / 100;
         }, 0);
     }
+
+    toJSON () {
+        return {
+            results: this.products.map(toJSON),
+            total: this.totalPrice
+        };
+    }
 }
 
 // export a factory function to create from scraped data
@@ -58,4 +65,8 @@ const PRODUCT_UNIT_PRICE = ".product .pricePerUnit";
 
 function unitPriceToFloat (priceString) {
     return parseFloat(/\d.\d\d/.exec(priceString)[0]);
+}
+
+function toJSON (item) {
+    return item.toJSON();
 }
