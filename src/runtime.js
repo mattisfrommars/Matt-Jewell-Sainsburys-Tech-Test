@@ -27,7 +27,7 @@ export default async function (config) {
 
         console.log(emoji.emojify("Everything downloaded and parsed ok! Outputting JSON :heart_eyes_cat:"));
         console.log("\n\n\n");
-        console.log(productListWithDetails.toJSON());
+        console.log(JSON.stringify(productListWithDetails.toJSON()));
 
     } catch (e) {
         console.error(emoji.emojify(":skull_and_crossbones:"));
