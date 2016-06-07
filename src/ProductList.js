@@ -10,14 +10,14 @@ export default class ProductList {
         return this.products.length;
     }
 
-    [Symbol.iterator]() {
+    [Symbol.iterator] () {
         let index = 0;
         return {
             next: () => {
                 const value = this.products[index];
                 const done = index >= this.products.length;
                 index++;
-                return { value, done };
+                return {value, done};
             }
         };
     }
@@ -54,7 +54,7 @@ export const createFromDom = function (domParserInstance) {
             unitPrice: unitPrices[i]
         });
     });
-    
+
     return new ProductList(products);
 };
 

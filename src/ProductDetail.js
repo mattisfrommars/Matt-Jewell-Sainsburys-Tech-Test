@@ -3,8 +3,9 @@ export default class ProductDetail {
     constructor (properties) {
         Object.assign(this, properties);
     }
-    
+
     toJSON () {
+        // This gets picked up by the ProductList integration test
         return {
             title: this.title,
             size: this.contentSize.toFixed(2) + "KB",
